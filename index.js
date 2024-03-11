@@ -72,7 +72,7 @@ app.get("/api/:id", (req, res) => {
     })
 })
 
-app.patch("/api/:id", (req, res) => {
+app.put("/api/:id", (req, res) => {
     Api.findByIdAndUpdate(req.params.id, req.body, { new: true }).then((api) => {
         if (!api) {
             return res.status(404).send();
